@@ -4,26 +4,22 @@ import Card from '../Card.js'
 class SwordAndChalice extends React.Component {
   render() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-            <div className="col-md-6">
-                <div className="m-5">
-                <Card
-                  cardNumber={this.props.pickedCards.glyphs[0]}
-                ></Card>
-                </div>
-                <div className="text-center m-5">Sword</div>
-            </div>
-            <div className="col-md-6">
-                <div className="m-5">
-                <Card
-                  cardNumber={this.props.pickedCards.glyphs[1]}
-                ></Card>
-                </div>
-                <div className="text-center m-5">Chalice</div>
-            </div>
-       </div>
-    </div>
+      <div className="m-5 d-flex justify-content-around">
+        <div>
+          <Card
+            cardNumber={this.props.pickedCards.glyphs[0]}
+            pickedCards={this.props.pickedCards}
+          ></Card>
+          <div className="text-center m-5">Sword</div>
+        </div>
+        <div>
+          <Card
+            cardNumber={this.props.pickedCards.glyphs[1]}
+            pickedCards={this.props.pickedCards}
+          ></Card>
+          <div className="text-center m-5">Chalice</div>
+        </div>
+      </div>
     )
   }
 }

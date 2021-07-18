@@ -5,11 +5,17 @@ import back from './back.png';
 class Card extends React.Component {
   constructor() {
     super();
-    this.state = { isFlipped: false };
+    this.state = { 
+      isFlipped: false,
+      pickedCards: {}
+    };
   }
 
-  componentWillReceiveProps() {
-    this.setState({ isFlipped: false });
+  static getDerivedStateFromProps(props, state) {
+    if (props.pickedCards !== state.pickedCards) {
+     return { isFlipped: false, pickedCards: props.pickedCards };
+    }
+    return null;
   }
 
   handleClick = (e) => {

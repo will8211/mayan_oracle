@@ -10,6 +10,7 @@ class OneCard extends React.Component {
                 <div className="m-5">
                 <Card 
                   cardNumber={this.props.pickedCards.mixed[0]}
+                  pickedCards={this.props.pickedCards}
                 >
                 </Card>
                 </div>

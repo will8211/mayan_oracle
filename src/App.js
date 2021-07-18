@@ -8,20 +8,60 @@ class App extends React.Component {
     super();
     this.state = {
       layoutName: '',
-      selection: '',
-      time: Date.now()
+      selection: ''
     };
   }
 
   draw = () => {
     this.setState({
       layoutName: this.state.selection,
-      time: Date.now()
+      pickedCards: this.getPickedCards()
     });
   }
 
   handleChange = (event) => {
     this.setState({selection: event.target.value});
+  }
+
+  getPickedCards = () => {
+    return {
+      mixed: this.getSequence('mixed'),
+      glyphs: this.getSequence('glyphs'),
+      numerals: this.getSequence('numerals'),
+      lenses: this.getSequence('lenses')
+    }
+  }
+
+  getSequence(cardType) {
+
+    let range;
+    switch(cardType) {
+      case 'glyphs':
+        range = [1, 20];
+        break;
+      case 'numerals':
+        range = [21, 33];
+        break;
+      case 'lenses':
+        range = [34, 44];
+        break;
+      default:
+        range = [1, 44];
+    }
+
+    let picked = [];
+    while (picked.length < 7) {
+      let card = this.getRandom(range[0], range[1]);
+      if (!picked.some(e => e === card)) {
+        picked.push(card);
+      }
+    }
+    console.log(picked)
+    return picked;
+  }
+
+  getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   render() {
@@ -45,7 +85,7 @@ class App extends React.Component {
         <div className='row'>
           <Layout
             layoutName={this.state.layoutName}
-            time={this.state.time}
+            pickedCards={this.state.pickedCards}
           ></Layout>
         </div>
       </div>
