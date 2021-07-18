@@ -1,55 +1,58 @@
-import React from 'react';
-import ReactCardFlip from 'react-card-flip';
-import back from './back.png';
+import React from "react";
+import ReactCardFlip from "react-card-flip";
+import back from "./back.png";
 
 class Card extends React.Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
       isFlipped: false,
-      pickedCards: {}
+      pickedCards: {},
     };
   }
 
   static getDerivedStateFromProps(props, state) {
     if (props.pickedCards !== state.pickedCards) {
-     return { isFlipped: false, pickedCards: props.pickedCards };
+      return { isFlipped: false, pickedCards: props.pickedCards };
     }
     return null;
   }
 
   handleClick = (e) => {
     e.preventDefault();
-      this.setState({ isFlipped: true });
-  }
+    this.setState({ isFlipped: true });
+  };
 
   getCardPath() {
-    return process.env.PUBLIC_URL + '/cards/' + this.props.cardNumber + '.png'
+    return process.env.PUBLIC_URL + "/cards/" + this.props.cardNumber + ".png";
   }
 
   render() {
     return (
-    <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
-      <div>
-        <img 
-          src={back}
-          alt="card back"
-          width="253"
-          height="353"
-          onClick={this.handleClick}
-        />
-      </div>
-      <div>
-        <img
-          src={this.getCardPath()}
-          alt="card front"
-          width="253"
-          height="353"
-          onClick={this.handleClick}
-        />
-      </div>  
-    </ReactCardFlip>
-    )
+      <ReactCardFlip
+        isFlipped={this.state.isFlipped}
+        flipDirection="horizontal"
+      >
+        <div>
+          <img
+            src={back}
+            alt="card back"
+            width="253"
+            height="353"
+            onClick={this.handleClick}
+          />
+        </div>
+        <div>
+          <img
+            src={this.getCardPath()}
+            alt="card front"
+            width="253"
+            height="353"
+            onClick={this.handleClick}
+          />
+        </div>
+      </ReactCardFlip>
+    );
   }
 }
 

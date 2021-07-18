@@ -1,5 +1,5 @@
-import React from 'react';
-import Card from '../Card.js'
+import React from "react";
+import Card from "../Card.js";
 
 class SwordAndChalice extends React.Component {
   render() {
@@ -20,7 +20,7 @@ class SwordAndChalice extends React.Component {
           <div className="text-center m-5">Chalice</div>
         </div>
       </div>
-    )
+    );
   }
 }
 export default SwordAndChalice;
