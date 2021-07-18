@@ -53,7 +53,7 @@ class App extends React.Component {
           <Layout
             layoutName={this.state.layoutName}
             pickedCards={this.state.pickedCards}
-          ></Layout>
+          />
         </div>
       </div>
     );

@@ -7,16 +7,18 @@ class SwordAndChalice extends React.Component {
       <div className="m-5 d-flex justify-content-around">
         <div>
           <Card
-            cardNumber={this.props.pickedCards.glyphs[0]}
             pickedCards={this.props.pickedCards}
-          ></Card>
+            type="glyphs"
+            index={0}
+          />
           <div className="text-center m-5">Star-glyph</div>
         </div>
         <div>
           <Card
-            cardNumber={this.props.pickedCards.numerals[0]}
             pickedCards={this.props.pickedCards}
-          ></Card>
+            type="numerals"
+            index={0}
+          />
           <div className="text-center m-5">Resonance</div>
         </div>
       </div>

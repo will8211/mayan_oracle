@@ -9,9 +9,10 @@ class OneCard extends React.Component {
           <div className="col-md-3">
             <div className="m-5">
               <Card
-                cardNumber={this.props.pickedCards.mixed[0]}
                 pickedCards={this.props.pickedCards}
-              ></Card>
+                type="mixed"
+                index={0}
+              />
             </div>
           </div>
         </div>

@@ -24,7 +24,8 @@ class Card extends React.Component {
   };
 
   getCardPath() {
-    return process.env.PUBLIC_URL + "/cards/" + this.props.cardNumber + ".png";
+    const card = this.props.pickedCards[this.props.type][this.props.index]
+    return process.env.PUBLIC_URL + "/cards/" + card + ".png";
   }
 
   render() {

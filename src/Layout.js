@@ -10,18 +10,18 @@ class Layout extends React.Component {
     switch (layoutName) {
       case "swordAndChalice":
         layout = (
-          <SwordAndChalice
-            pickedCards={this.props.pickedCards}
-          ></SwordAndChalice>
+          <SwordAndChalice pickedCards={this.props.pickedCards} />
         );
         break;
       case "tzolkinMapping":
         layout = (
-          <TzolkinMapping pickedCards={this.props.pickedCards}></TzolkinMapping>
+          <TzolkinMapping pickedCards={this.props.pickedCards} />
         );
         break;
       case "oneCard":
-        layout = <OneCard pickedCards={this.props.pickedCards}></OneCard>;
+        layout = (
+          <OneCard pickedCards={this.props.pickedCards} />
+        );
         break;
       default:
         layout = null;
