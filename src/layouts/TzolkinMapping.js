@@ -12,15 +12,15 @@ class SwordAndChalice extends React.Component {
                   cardNumber={this.props.pickedCards.glyphs[0]}
                 ></Card>
                 </div>
-                <div className="text-center m-5">Sword</div>
+                <div className="text-center m-5">Star-glyph</div>
             </div>
             <div className="col-md-6">
                 <div className="m-5">
                 <Card
-                  cardNumber={this.props.pickedCards.glyphs[1]}
+                  cardNumber={this.props.pickedCards.numerals[0]}
                 ></Card>
                 </div>
-                <div className="text-center m-5">Chalice</div>
+                <div className="text-center m-5">Resonance</div>
             </div>
        </div>
     </div>

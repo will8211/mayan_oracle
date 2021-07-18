@@ -6,9 +6,12 @@ class OneCard extends React.Component {
     return (
         <div className="container">
             <div className="row justify-content-center">
-            <div className="col-md-12">
+            <div className="col-md-3">
                 <div className="m-5">
-                <Card></Card>
+                <Card 
+                  cardNumber={this.props.pickedCards.mixed[0]}
+                >
+                </Card>
                 </div>
             </div>
        </div>
