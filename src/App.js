@@ -26,10 +26,10 @@ class App extends React.Component {
             <div className="m-5">
               <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                 <div>
-                  <img src={back} alt="card back" width="253" height="379" onClick={this.handleClick}/>
+                  <img src={back} alt="card back" width="253" height="353" onClick={this.handleClick}/>
                 </div>
                 <div>
-                  <img src={this.state.card} alt="card front" width="253" height="379" onClick={this.handleClick}/>
+                  <img src={this.state.card} alt="card front" width="253" height="353" onClick={this.handleClick}/>
                 </div>  
               </ReactCardFlip>
             </div>
