@@ -10,6 +10,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={0}
+            waitBeforeShow={200}
           />
           <h5 className="text-center m-5">{this.props.meanings[0]}</h5>
         </div>
@@ -18,6 +19,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={1}
+            waitBeforeShow={400}
           />
           <h5 className="text-center m-5">{this.props.meanings[1]}</h5>
         </div>
@@ -26,6 +28,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={2}
+            waitBeforeShow={600}
           />
           <h5 className="text-center m-5">{this.props.meanings[2]}</h5>
         </div>

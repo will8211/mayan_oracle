@@ -8,8 +8,9 @@ class OneCard extends React.Component {
         <div>
           <Card
             pickedCards={this.props.pickedCards}
-            type="mixed"
+            type={this.props.types[0]}
             index={0}
+            waitBeforeShow={200}
           />
         </div>
       </div>

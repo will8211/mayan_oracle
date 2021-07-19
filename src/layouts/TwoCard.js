@@ -10,6 +10,7 @@ class SwordAndChalice extends React.Component {
             pickedCards={this.props.pickedCards}
             type={this.props.types[0]}
             index={this.props.indexes[0]}
+            waitBeforeShow={200}
           />
           <h5 className="text-center m-5">{this.props.meanings[0]}</h5>
         </div>
@@ -18,6 +19,7 @@ class SwordAndChalice extends React.Component {
             pickedCards={this.props.pickedCards}
             type={this.props.types[1]}
             index={this.props.indexes[1]}
+            waitBeforeShow={400}
           />
           <h5 className="text-center m-5">{this.props.meanings[1]}</h5>
         </div>

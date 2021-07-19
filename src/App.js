@@ -40,7 +40,8 @@ class App extends React.Component {
                 <option disabled value=''>Pick a spread...</option>
                 
                 <option disabled>One card:</option>
-                <option value="oneCard">{tab}One-card consultation</option>
+                <option value="oneCard">{tab}One Card Consultation</option>
+                <option value="oneGlyph">{tab}One Card (Star-glyphs only)</option>
 
                 <option disabled>Two cards:</option>
                 <option value="swordAndChalice">{tab}Sword and Chalice</option>
@@ -59,7 +60,7 @@ class App extends React.Component {
                 <option value="becomingTheMindOfLight">{tab}Becoming the Mind of Light</option>
               </select>
               <button
-                className="btn btn-primary"
+                className={"btn btn-primary" + (this.state.selection==='' ? " disabled" : '')}
                 type="button"
                 onClick={this.draw}
               >

@@ -13,7 +13,20 @@ class Layout extends React.Component {
 
     switch (layoutName) {
       case "oneCard":
-        layout = <OneCard pickedCards={pickedCards} />;
+        layout = (
+          <OneCard 
+            pickedCards={pickedCards}
+            types={["mixed"]}
+          />
+        )
+        break;
+      case "oneGlyph":
+        layout = (
+          <OneCard 
+            pickedCards={pickedCards}
+            types={["glyphs"]}
+          />
+        )
         break;
       case "swordAndChalice":
         layout = (
@@ -86,6 +99,8 @@ class Layout extends React.Component {
               "Innocence / Trust / Teaching",
             ]}
             indexes={[4, 3, 0, 1, 2]}
+            waitTimes={[1000, 800, 200, 400, 600]}
+
           />
         );
         break;
@@ -102,6 +117,7 @@ class Layout extends React.Component {
               "Self-Empowerment"
             ]}
             indexes={[3, 0, 4, 2, 1]}
+            waitTimes={[800, 200, 1000, 600, 400]}
           />
         );
         break;

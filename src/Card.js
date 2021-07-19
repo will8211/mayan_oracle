@@ -6,8 +6,7 @@ class Card extends React.Component {
   constructor() {
     super();
     this.state = {
-      isFlipped: false,
-      pickedCards: {},
+      hidden: "d-none",
     };
   }
 
@@ -18,41 +17,56 @@ class Card extends React.Component {
     return null;
   }
 
+  componentDidUpdate() {
+    setTimeout(() => {
+      this.setState({ hidden: "d-block" });
+    }, this.props.waitBeforeShow);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ hidden: "d-block" });
+    }, this.props.waitBeforeShow);
+  }
+
   handleClick = (e) => {
     e.preventDefault();
     this.setState({ isFlipped: true });
   };
 
   getCardPath() {
-    const card = this.props.pickedCards[this.props.type][this.props.index]
+    const card = this.props.pickedCards[this.props.type][this.props.index];
     return process.env.PUBLIC_URL + "/cards/" + card + ".png";
   }
 
   render() {
     return (
-      <ReactCardFlip
-        isFlipped={this.state.isFlipped}
-        flipDirection="horizontal"
-      >
-        <div>
-          <img
-            src={back}
-            alt="card back"
-            width="253"
-            height="353"
-            onClick={this.handleClick}
-          />
-        </div>
-        <div>
-          <img
-            src={this.getCardPath()}
-            alt="card front"
-            width="253"
-            height="353"
-            onClick={this.handleClick}
-          />
-        </div>
-      </ReactCardFlip>
+      <div style={{ width: 253, height: 353 }}>
+        <ReactCardFlip
+          isFlipped={this.state.isFlipped}
+          flipDirection="horizontal"
+        >
+          <div className={this.state.hidden}>
+            <img
+              src={back}
+              alt="card back"
+              width="253"
+              height="353"
+              onClick={this.handleClick}
+            />
+          </div>
+          <div className={this.state.isFlipped ? "d-block" : "d-none"}>
+            <img
+              src={this.getCardPath()}
+              alt="card front"
+              width="253"
+              height="353"
+              onClick={this.handleClick}
+              className={this.state.hidden}
+            />
+          </div>
+        </ReactCardFlip>
+      </div>
     );
   }
 }

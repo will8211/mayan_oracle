@@ -11,8 +11,9 @@ class Mirror extends React.Component {
               pickedCards={this.props.pickedCards}
               type="glyphs"
               index={2}
+              waitBeforeShow={600}
             />
-            <h5 className="text-center mt-4 mb-5">Through the Mirror</h5>
+            <h5 className="text-center mt-4 mb-5">(2) Through the Mirror</h5>
           </div>
         </div>
         <div className="d-flex flex-wrap justify-content-around">
@@ -21,16 +22,18 @@ class Mirror extends React.Component {
               pickedCards={this.props.pickedCards}
               type="glyphs"
               index={0}
+              waitBeforeShow={200}
             />
-            <h5 className="text-center mt-4 mb-5">Smoky Mirror</h5>
+            <h5 className="text-center mt-4 mb-5">(1) Smoky Mirror</h5>
           </div>
           <div>
             <Card
               pickedCards={this.props.pickedCards}
               type="glyphs"
               index={1}
+              waitBeforeShow={400}
             />
-            <h5 className="text-center mt-4 mb-5">Clear Mirror</h5>
+            <h5 className="text-center mt-4 mb-5">(3) Clear Mirror</h5>
           </div>
         </div>
       </div>
