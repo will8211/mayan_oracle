@@ -24,20 +24,35 @@ class App extends React.Component {
   };
 
   render() {
+    const tab = '\u00A0\u00A0'
     return (
       <div className="container">
+        <h1 className="text-center mt-5">The Mayan Oracle</h1>
         <div className="row">
+        <div className="col-md-3"></div>
           <div className="col-md-6">
-            <div className="input-group m-5">
+            <div className="input-group mt-5 mb-5">
               <select
                 className="form-select"
                 value={this.state.selection}
                 onChange={this.handleChange}
               >
-                <option value="">Pick a spread...</option>
-                <option value="oneCard">One card consultation</option>
-                <option value="swordAndChalice">Sword and chalice</option>
-                <option value="tzolkinMapping">Tzolkin mapping</option>
+                <option disabled value=''>Pick a spread...</option>
+                <option disabled>One card:</option>
+                <option value="oneCard">{tab}One-card consultation</option>
+
+                <option disabled>Two cards:</option>
+                <option value="swordAndChalice">{tab}Sword and Chalice</option>
+                <option value="tzolkinMapping">{tab}Tzolkin Mapping</option>
+
+                <option disabled>Three cards:</option>
+                <option value="illusionIntegrationGift">{tab}Illusion, Integration, Gift</option>
+                <option value="mindHeartBody">{tab}Mind, Heart, Body</option>
+                <option value="pastPresentFuture">{tab}Past, Present, Future</option>
+                <option value="treeOfChoice">{tab}Tree of Choice</option>
+                <option value="pathOfEcstasy">{tab}Path of Ecstasy</option>
+                <option value="hallOfMirrors">{tab}Hall of Mirrors</option>
+
               </select>
               <button
                 className="btn btn-primary"
@@ -48,6 +63,7 @@ class App extends React.Component {
               </button>
             </div>
           </div>
+          <div className="col-md-3"></div>
         </div>
         <div className="row">
           <Layout

@@ -4,22 +4,22 @@ import Card from "../Card.js";
 class SwordAndChalice extends React.Component {
   render() {
     return (
-      <div className="m-5 d-flex justify-content-around">
+      <div className="d-flex flex-wrap justify-content-around">
         <div>
           <Card
             pickedCards={this.props.pickedCards}
-            type="glyphs"
-            index={0}
+            type={this.props.types[0]}
+            index={this.props.indexes[0]}
           />
-          <div className="text-center m-5">Star-glyph</div>
+          <h5 className="text-center m-5">{this.props.meanings[0]}</h5>
         </div>
         <div>
           <Card
             pickedCards={this.props.pickedCards}
-            type="numerals"
-            index={0}
+            type={this.props.types[1]}
+            index={this.props.indexes[1]}
           />
-          <div className="text-center m-5">Resonance</div>
+          <h5 className="text-center m-5">{this.props.meanings[1]}</h5>
         </div>
       </div>
     );
