@@ -38,6 +38,7 @@ class App extends React.Component {
                 onChange={this.handleChange}
               >
                 <option disabled value=''>Pick a spread...</option>
+                
                 <option disabled>One card:</option>
                 <option value="oneCard">{tab}One-card consultation</option>
 
@@ -53,6 +54,9 @@ class App extends React.Component {
                 <option value="pathOfEcstasy">{tab}Path of Ecstasy</option>
                 <option value="hallOfMirrors">{tab}Hall of Mirrors</option>
 
+                <option disabled>Five cards:</option>
+                <option value="fourDirections">{tab}Four Directions</option>
+                <option value="becomingTheMindOfLight">{tab}Becoming the Mind of Light</option>
               </select>
               <button
                 className="btn btn-primary"
