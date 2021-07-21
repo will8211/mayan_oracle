@@ -1,6 +1,6 @@
 import React from "react";
 import ReactCardFlip from "react-card-flip";
-import back from "./back.png";
+import back from "./images/back.png";
 
 class Card extends React.Component {
   constructor() {
