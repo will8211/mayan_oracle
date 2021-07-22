@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../Card.js";
 
+const cardDelay = process.env.REACT_APP_CARD_DELAY;
+
 class OneCard extends React.Component {
   render() {
     return (
@@ -10,7 +12,7 @@ class OneCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type={this.props.types[0]}
             index={0}
-            waitBeforeShow={200}
+            waitBeforeShow={cardDelay}
           />
         </div>
       </div>

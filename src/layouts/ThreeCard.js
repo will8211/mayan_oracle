@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../Card.js";
 
+const cardDelay = process.env.REACT_APP_CARD_DELAY;
+
 class ThreeCard extends React.Component {
   render() {
     return (
@@ -10,7 +12,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={0}
-            waitBeforeShow={200}
+            waitBeforeShow={cardDelay}
           />
           <h5 className="text-center m-5">{this.props.meanings[0]}</h5>
         </div>
@@ -19,7 +21,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={1}
-            waitBeforeShow={400}
+            waitBeforeShow={cardDelay * 2}
           />
           <h5 className="text-center m-5">{this.props.meanings[1]}</h5>
         </div>
@@ -28,7 +30,7 @@ class ThreeCard extends React.Component {
             pickedCards={this.props.pickedCards}
             type="mixed"
             index={2}
-            waitBeforeShow={600}
+            waitBeforeShow={cardDelay * 3}
           />
           <h5 className="text-center m-5">{this.props.meanings[2]}</h5>
         </div>

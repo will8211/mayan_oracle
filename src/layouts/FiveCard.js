@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Card.js";
 
-class ThreeCard extends React.Component {
+class FiveCard extends React.Component {
   render() {
     return (
       <div>
@@ -61,4 +61,4 @@ class ThreeCard extends React.Component {
     );
   }
 }
-export default ThreeCard;
+export default FiveCard;
